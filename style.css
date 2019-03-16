@@ -1,0 +1,43 @@
+tr {
+	border-bottom: 1px solid #ddd;
+}
+
+/********************Show more Toggle****************************/
+label {
+  	margin: 20px 0 0;
+}
+label:hover {
+  	text-decoration: underline;
+  	text-decoration-color: solid green;
+}
+
+/*not really working*/
+.bg-row:nth-child(2) {
+  background: #eee;
+}
+
+p {
+text-align: left;
+}
+
+/***********no idea, why the label wouldn't behave like the checkbox. if I hide the checkbox, the label always responds to 
+************the first item, but not the others.
+.hidden {
+  	opacity: 0;
+}
+*/
+
+.show {
+	display: none;
+}
+
+.ex input[type="checkbox"]:checked + .show {
+	display: flex;
+	width: 60vw !important;
+  	background: rgba(110, 200, 40, 0.3);
+	border: 1px solid #ddd;
+}
+
+button[class="right"] {
+	text-align: right;
+}
