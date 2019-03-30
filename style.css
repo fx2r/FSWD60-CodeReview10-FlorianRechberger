@@ -1,43 +1,70 @@
-tr {
-	border-bottom: 1px solid #ddd;
+body {
+	font-family: 'Old Standard TT', serif !important;
+	font-size:calc(0.9em + .3vw)!important;
+}
+@media screen and (min-width:1600px) {
+	body{ font-size: 1.6em; }
 }
 
-/********************Show more Toggle****************************/
-label {
-  	margin: 20px 0 0;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
 label:hover {
-  	text-decoration: underline;
-  	text-decoration-color: solid green;
+	text-decoration: blueviolet;
 }
 
-/*not really working*/
-.bg-row:nth-child(2) {
-  background: #eee;
+/******** neither nth:child(2) nor nth:type-of(odd),********/
+/*so I dynamically assigen with php the classes 'odd' and 'even',
+*but in the end used bootstarp classes
+/////////////////////////////////
+.odd {
+    background: #eee;
+    background-color: #eee;
+}
+.even {
+    background: #eee;
+    background-color: #eee;
+}
+///////////////////////////////////*/
+
+/*********************************************
+***custom toggle only working in Firefox******
+*********************************************/
+label:hover b {
+	color:#33b5e5;
+}
+label b {
+	color: #0099CC;
 }
 
-p {
-text-align: left;
-}
-
-/***********no idea, why the label wouldn't behave like the checkbox. if I hide the checkbox, the label always responds to 
-************the first item, but not the others.
 .hidden {
-  	opacity: 0;
+  	opacity: 0!important;
 }
-*/
 
+.ex input[type="checkbox"]:checked ~ .show {
+	display: flex;
+	width: 100%;
+ 	background: rgb(236, 222, 255);
+	flex-wrap: wrap;
+	overflow-wrap: break-word;
+	
+}
 .show {
+	display: none;
+	border-radius: 0.25rem 0 0.25rem 0.25rem !important;
+}
+
+.ex input[type="checkbox"]:checked ~ .hide{
 	display: none;
 }
 
-.ex input[type="checkbox"]:checked + .show {
-	display: flex;
-	width: 60vw !important;
-  	background: rgba(110, 200, 40, 0.3);
-	border: 1px solid #ddd;
-}
-
-button[class="right"] {
-	text-align: right;
+.ex [type="checkbox"]:checked ~ label {
+  border-radius: 0 0.25rem 0.25rem 0 !important;
 }
