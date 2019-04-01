@@ -1,9 +1,15 @@
+.navbar-brand img {
+	max-height: 100px;
+}
+
 body {
 	font-family: 'Old Standard TT', serif !important;
-	font-size:calc(0.9em + .3vw)!important;
+	font-size:calc(0.7em + .6vw)!important;
 }
 @media screen and (min-width:1600px) {
-	body{ font-size: 1.6em; }
+	body {
+		font-size: 1.6em;
+	}
 }
 
 input::-webkit-outer-spin-button,
@@ -14,10 +20,6 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
-}
-
-label:hover {
-	text-decoration: blueviolet;
 }
 
 /******** neither nth:child(2) nor nth:type-of(odd),********/
@@ -45,7 +47,9 @@ label b {
 }
 
 .hidden {
-  	opacity: 0!important;
+	opacity: 0!important;
+	margin-left: 9999px;
+	margin-top: -50%;
 }
 
 .ex input[type="checkbox"]:checked ~ .show {
@@ -58,7 +62,14 @@ label b {
 }
 .show {
 	display: none;
-	border-radius: 0.25rem 0 0.25rem 0.25rem !important;
+	border-radius: 0.25rem 0 0.25rem 0.25rem;
+}
+
+.hide{
+	word-break: break-word;
+}
+.hide h5{
+	font-weight: bold;
 }
 
 .ex input[type="checkbox"]:checked ~ .hide{
@@ -66,5 +77,35 @@ label b {
 }
 
 .ex [type="checkbox"]:checked ~ label {
-  border-radius: 0 0.25rem 0.25rem 0 !important;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+@media screen and (min-width:992px) {
+	.show {
+		border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+	}
+}
+
+@media screen and (max-width:320px) {
+	.hide {
+		min-width: 100% !important;
+		text-align: center ;
+		padding-top: 0.9em;
+		overflow-wrap: break-word;
+	}
+	.show {
+		min-width: 100%;
+		border-radius: 0 0 0.25rem 0.25rem;
+	}
+	.updel {
+		justify-content: space-around;
+	}
+}
+@media screen and (min-width:321px) {
+	.hide {
+		width: auto !important;
+	}
+	.updel {
+		justify-content: flex-start;
+	}
 }
